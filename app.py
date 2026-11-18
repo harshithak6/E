@@ -125,7 +125,17 @@ def init():
 
 # ---------------- UI ----------------
 st.set_page_config("EarlyAlert", "🎓", layout="wide"); init()
-st.markdown("<style>.stApp{background:#f5f9ff}[data-testid=stSidebar]{background:#e8f1fd}h1,h2,h3{color:#0b4f9c}[data-testid=stMetric]{background:#fff;border:1px solid #cfe0f7;border-radius:12px;padding:12px}</style>", unsafe_allow_html=True)
+st.markdown("""<style>
+.stApp{background:#f5f9ff;color:#10243e}
+.stApp p,.stApp li,.stApp label,.stApp span,.stApp div[data-testid=stMarkdownContainer]{color:#10243e}
+h1,h2,h3,h4{color:#0b4f9c!important}
+[data-testid=stSidebar]{background:#e8f1fd}
+[data-testid=stSidebar] *{color:#10243e!important}
+[data-testid=stMetric]{background:#fff;border:1px solid #cfe0f7;border-radius:12px;padding:12px}
+[data-testid=stMetricValue],[data-testid=stMetricLabel]{color:#0b4f9c!important}
+.stTextInput input,.stTextArea textarea{background:#fff!important;color:#10243e!important}
+.stButton>button[kind=primary]{background:#0b63ce;color:#fff!important;border:none}
+</style>""", unsafe_allow_html=True)
 COL = {"Low": "#2e9e5b", "Medium": "#f0a500", "High": "#d33f3f"}
 U = st.session_state.get("user")
 if not U:
